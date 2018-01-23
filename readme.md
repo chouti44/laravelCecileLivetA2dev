@@ -1,3 +1,23 @@
+<p>Install project </p>
+
+```
+git clone https://github.com/chouti44/laravelCecileLivetA2dev 
+cd A2Dev-laravel 
+composer update 
+php artisan route:scan 
+
+
+```
+# Démarrage du serveur PHP
+
+```bash
+
+php -S localhost:8080 -d display_errors=1 -t ./public
+
+```
+
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">

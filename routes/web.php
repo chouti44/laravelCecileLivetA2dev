@@ -11,7 +11,7 @@
 |
 */
 
-
+/*
 Route::get('/articles', 'BlogController@articles');
 
 Route::get('/article/{id}', 'BlogController@article');
@@ -19,3 +19,4 @@ Route::get('/article/{id}', 'BlogController@article');
 Route::get('/contact', 'ContactController@contact');
 
 Route::get('/', 'HomeController@index');
+*/
