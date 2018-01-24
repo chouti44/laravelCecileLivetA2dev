@@ -7,6 +7,7 @@ composer update
 php artisan route:scan 
 
 
+
 ```
 # Démarrage du serveur PHP
 

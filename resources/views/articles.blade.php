@@ -9,5 +9,11 @@
 </head>
 <body>
 <h1>list articles</h1>
+
+
+@foreach ($articles as $article)
+        <h2>{{ $article[\App\Models\Articles::TITLE] }}</h2>
+        <p>{{ str_limit($article[\App\Models\Articles::CONTENT], 200) }}</p>
+@endforeach
 </body>
 </html>
