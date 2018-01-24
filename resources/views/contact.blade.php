@@ -9,14 +9,18 @@
 </head>
 <body>
 <h1>Contact</h1>
+    @if($message !== NULL)
+            {{ $message }}
+    @endif
 
-{!! Form::open(['url' => 'foo/bar']) !!}
+{!! Form::open(['url' => '/contact/' , 'method' => 'POST']) !!}
     {!! Form::label('email', 'Enter email')  !!}
     {!! Form::email('email', '') !!} <br/> <br/>
     {!! Form::label('subject', 'Enter subject') !!}
     {!! Form::text('subject', '') !!}  <br/> <br/>
     {!! Form::label('message', 'Enter message') !!}
     {!! Form::textarea('message', '') !!} <br/> <br/>
+    {{ csrf_field() }}
     {!! Form::submit('Send') !!}
 {!! Form::close() !!}
 </body>

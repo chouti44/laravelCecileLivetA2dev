@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Articles;
 use Illuminate\Http\Request;
 
+
 class BlogController extends Controller
 {
     /**
@@ -20,9 +21,9 @@ class BlogController extends Controller
     /**
      * @Get("/article/{id}")
      */
-    public function article( $id = null) {
+    public function article( $slug = null) {
         return view('article', [
-            'id' => $id
+            'slug' => $slug
         ]);
     }
 }

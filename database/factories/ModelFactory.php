@@ -26,7 +26,7 @@ $factory->define(App\Models\Articles::class, function (Faker\Generator $faker) {
 
     return [
         \App\Models\Articles::TITLE => implode("", $faker->words(6)),
-        \App\Models\Articles::SLUG => $faker->unique->slug(5),
+        \App\Models\Articles::SLUG => $faker->unique()->slug(5),
         \App\Models\Articles::CONTENT => implode("", $faker->paragraphs(5)),
     ];
 });
