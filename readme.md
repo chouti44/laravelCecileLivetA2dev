@@ -1,12 +1,14 @@
-<p>Install project </p>
+# Install project 
 
 ```
 git clone https://github.com/chouti44/laravelCecileLivetA2dev 
 cd A2Dev-laravel 
 composer update 
+.env.exemple copier et remplacer par .env
+php artisan key:generate
 php artisan route:scan 
-
-
+modifier les connexion à la bdd .env
+php artisan migrate
 
 ```
 # Démarrage du serveur PHP

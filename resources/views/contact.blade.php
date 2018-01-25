@@ -18,8 +18,8 @@
     {!! Form::email('email', '') !!} <br/> <br/>
     {!! Form::label('subject', 'Enter subject') !!}
     {!! Form::text('subject', '') !!}  <br/> <br/>
-    {!! Form::label('message', 'Enter message') !!}
-    {!! Form::textarea('message', '') !!} <br/> <br/>
+    {!! Form::label('content', 'Enter message') !!}
+    {!! Form::textarea('content', '') !!} <br/> <br/>
     {{ csrf_field() }}
     {!! Form::submit('Send') !!}
 {!! Form::close() !!}

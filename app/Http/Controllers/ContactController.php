@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Mail;
+use App\Models\Mails;
+use App\Notifications\form;
 
 /**
  * @Middleware("web")
@@ -31,18 +33,22 @@ class ContactController extends Controller
         $validator = Validator::make($values, [
             'email' => 'required',
             'subject' => 'required',
-            'message' => 'required'
+            'content' => 'required'
         ]);
 
         if($validator->fails()) {
             return redirect()->action('ContactController@contact')->with('message', 'Tous les champs sont obligatoires');
         }
 
-        Mail::create([
-            Mail::EMAIL => $values[Mail::EMAIL],
-            Mail::SUBJECT => $values[Mail::SUBJECT],
-            Mail::CONTENT => $values[Mail::CONTENT],
+        $mail = Mails::create([
+            Mails::EMAIL => $values[Mails::EMAIL],
+            Mails::SUBJECT => $values[Mails::SUBJECT],
+            Mails::CONTENT => $values[Mails::CONTENT]
         ]);
+
+        Notification::send($mail, new form($mail));
+
+
 
         return redirect()->action('ContactController@contact')->with('message', 'Your mail is send.');
     }
